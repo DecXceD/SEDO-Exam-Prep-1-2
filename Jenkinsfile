@@ -11,7 +11,7 @@ pipeline {
         stage("Build the application") {
             when { branch pattern: "(main|develop|feature/.*)", comparator: "REGEXP" }
             steps {
-                bat 'dotnet --no-restore'
+                bat 'dotnet build --no-restore'
             }
         }
         stage("Run the tests") {
